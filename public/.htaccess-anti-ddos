@@ -1,0 +1,54 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Block Users if some headers are missing
+    RewriteCond %{HTTP:Accept-Encoding} ^$
+    RewriteRule . - [F,L]
+
+    RewriteCond %{HTTP:Connection} ^$
+    RewriteRule . - [F,L]
+
+    RewriteCond %{HTTP:Accept} ^$
+    RewriteRule . - [F,L]
+
+    RewriteCond %{HTTP:Cookie} ^$
+    RewriteRule . - [F,L]
+    
+    # Block Proxied Users
+    RewriteCond %{HTTP:X-Forwarded-For} !^$
+    RewriteRule . - [F,L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access 14 days"
+    ExpiresByType text/css "access 14 days"
+    ExpiresByType text/html "access 2 days"
+    ExpiresByType image/png "access 1 month"
+    ExpiresByType image/gif "access 1 month"
+    ExpiresByType image/jpg "access 1 month"
+    ExpiresByType image/jpeg "access 1 month"
+    ExpiresByType text/x-javascript "access 1 year"
+    ExpiresByType application/pdf "access 1 week"
+    ExpiresByType image/x-icon "access 2 months"
+    ExpiresByType application/x-shockwave-flash "access 7 months"
+</IfModule>
+

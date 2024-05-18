@@ -1,0 +1,9 @@
+/*global $, alert, console, prompt*/
+
+$(document).ready(function(){
+   
+    'use strict';
+    
+    
+    
+});

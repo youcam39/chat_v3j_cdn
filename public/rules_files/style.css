@@ -1,0 +1,150 @@
+/* start global */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Cairo";
+}
+.colored{
+    color: #0fa0e8;
+}
+.main-head{
+    font-size: 30px;
+    position: relative;
+    color: #000;
+    line-height: 50px;
+}
+.main-head:after{
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: -15px;
+    height: 2px;
+    width: 50px;
+    background-color: #0fa0e8;
+}
+/* end global */
+
+/* start header */
+header{
+    min-height: 400px;
+    height: 400px;
+    /* background: url("../img/background.jpeg") no-repeat top center fixed; */
+    /* background-size: cover; */
+}
+header .layer{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .65);
+    color: #fff;
+    padding-top: 10%;
+}
+header h1{
+    font-size: 3.6vw;
+    line-height: 50px;
+}
+/* end header */
+
+/* start banner */
+.banners{
+    padding: 40px 0;
+}
+.banners aside{
+    margin-bottom: 20px;
+}
+.banners aside div{
+    border: 1px solid #999;
+    height: 200px;
+    line-height: 200px;
+    font-weight: bold;
+    font-size: 40px;
+}
+/* end banner */
+
+/* start text */
+.text{
+    padding: 40px 0;
+    background-color: #ececec;
+}
+.text p{
+    line-height: 40px;
+    font-size: 20px;
+    margin: 30px 0;
+}
+/* end text */
+
+/* start conditions */
+.conditions{
+    /* background: url("../img/background2.jpeg") no-repeat top center; */
+    /* background-size: cover; */
+}
+.conditions .layer{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    padding: 40px 0;
+}
+.conditions .main-head{
+    color: #fff;
+}
+.conditions ul{
+    list-style: decimal;
+    padding: 30px 15px;
+    color: #fff;
+    font-size: 17px;
+    line-height: 40px;
+}
+/* end conditions */
+
+/* start contact */
+.contact{
+    padding: 40px 0 0 0;
+}
+.contact .main-head{
+    margin-bottom: 30px;
+}
+.contact p{
+    line-height: 40px;
+    direction: ltr;
+    font-size: 20px;
+    padding: 5px;
+    background-color: #ececec;
+    margin-top: 20px;
+}
+.contact p i{
+    line-height: 40px;
+    font-size: 25px;
+}
+.copyrights{
+    background-color: #0fa0e8;
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+}
+.copyrights a{
+    color: #fff !important;
+    transition: all .3s linear;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+.copyrights a:hover{
+    border-color: #fff;
+}
+/* end contact */
+
+/* media  */
+@media(max-width:767px){
+    header .layer{
+        padding-top: 20%;
+    }
+    header h1{
+    font-size: 6.6vw;
+}
+    .text p{
+    line-height: 40px;
+    font-size: 15px;
+}
+}
